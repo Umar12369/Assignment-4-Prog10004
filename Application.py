@@ -25,3 +25,12 @@ if __name__ == "__main__":
             print("Movie added!")
             # Write the movies to the CSV file
             movie_store.write_to_csv("movies.csv")
+
+
+        elif choice == "2":
+            title = input("Enter movie title: ")
+            movie = movie_store.get_movie(title)
+            if movie:
+                print(movie)
+            else:
+                print("Movie not found!")
