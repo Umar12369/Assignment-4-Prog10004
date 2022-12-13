@@ -34,3 +34,15 @@ if __name__ == "__main__":
                 print(movie)
             else:
                 print("Movie not found!")
+
+        elif choice == "3":
+            title = input("Enter movie title: ")
+            director = input("Enter new director: ")
+            release_year = input("Enter new release year: ")
+            movie = movie_store.update_movie(title, director, release_year)
+            if movie:
+                print("Movie updated!")
+                # Write the updated movies to the CSV file
+                movie_store.write_to_csv("movies.csv")
+            else:
+                print("Movie not found!")
